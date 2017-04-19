@@ -1,0 +1,45 @@
+@charset "utf-8";
+/**
+ * 框架全局基础方法
+ * 包括响应式方案，CSS3兼容性方案，厂商前缀方案，iconfont方案，flex布局等全局方法
+ */
+ 
+@import "classes/align";
+@import "classes/calc";
+@import "classes/clearfix";
+@import "classes/killspace";
+@import "classes/flex";
+@import "classes/fullscreen";
+@import "classes/overflow";
+@import "classes/prefix";
+@import "classes/transform";
+@import "classes/transition";
+@import "classes/text";
+@import "classes/user-interface";
+
+@import "classes/animation";
+@import "classes/responsive";
+@import "classes/shape";
+
+@import "classes/border-radius";
+@import "classes/border";
+@import "classes/background";
+
+/**
+ * @module 功能
+ * @description 定义文档根节点是否允许滚动
+ * @method root-scroll
+ * @param {Boolean} $is-scroll 指定是否有滚动，默认值：false
+ */
+@mixin root-scroll($is-scroll: false) {
+    html,
+    body {
+        @if $is-scroll {
+            overflow: visible;
+            height: auto;
+        } @else {
+            overflow: hidden;
+            height: 100%;
+        }
+    }
+}

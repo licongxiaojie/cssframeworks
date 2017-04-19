@@ -1,0 +1,18 @@
+@charset "utf-8";
+@import "../../fragment/table";
+
+/**
+ * table扩展
+ */
+
+// 有竖线
+@include m_tb(
+    $name: test,
+    $has-vertical-border: true
+);
+
+// 有间隔色
+@include m_tb(
+    $name: test2,
+    $even-bgcolor: #f9f9f9
+);

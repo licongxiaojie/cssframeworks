@@ -1,0 +1,59 @@
+@charset "utf-8";
+/**
+ * 框架全局base定义
+ * 本文件与variables不同地方在于，这里所定义的map可以使用在variables和任何地方
+ * 本文件中map使用"_"开头，extra中不使用"_"
+ * base ⇌ extra
+ */
+
+// base
+$_base: (
+    // root字号类型：normal | scaling
+    // normal表示root字号使用 `font-size-root`
+    // scaling表示root字号使用 `font-size-root-scaling`
+    responsive-type:        normal,
+    // html root使用100px，方便rem单位的换算
+    font-size-root:         100px,
+    // 适配：用于做元素随屏幕大小而变化的情况
+    //font-size-root-scaling: 31.25vw,
+    // body的默认字体
+    // chrome37-45/opera24-33在body上使用rem时有个bug（其他版本未测）:
+    // 只要引用了外部样式，不论里面的内容是什么，body上的rem就会失效
+    // 这时在开发者工具里，关闭又开启一次该条属性，则生效，刷新又挂
+    // 所以这里注释该条属性，默认字号不能从root相对而来，所以定义成px
+    font-size:            14px,
+    // 基准字号，随root改变而变
+    font-size-baseline:   .14rem,
+    // font-family
+    font-family:          #{"Helvetica Neue", Helvetica, STHeiTi, sans-serif},
+    // lin-height
+    line-height:          1.5,
+    // 默认文档背景色
+    doc-bgcolor:          #fff,
+    // 默认边框色
+    border-color:         #e0e0e0,
+    // 默认次级边框色
+    sub-border-color:     #e0e0e0,
+    // 默认背景颜色
+    bgcolor:              #f4f4f4,
+    // 默认文本颜色
+    color:                #888,
+    // 默认次级文本颜色
+    sub-color:            #b2b2b2,
+    //默认标题文本颜色
+    tit-color:            #333,
+    // 默认边框色
+    disabled-border-color:#e0e0e0,
+    // 默认文档颜色
+    disabled-bgcolor:     #ccc,
+    // 默认禁用文本颜色
+    disabled-color:       #e0e0e0,
+    // 高亮色
+    light-color:          #49f,
+    // 价格颜色
+    price-color:          #f55,
+    // 默认链接色
+    link-color:           #49f,
+    // 链接经过色
+    link-hover-color:     #3c90f5
+);

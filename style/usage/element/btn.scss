@@ -1,0 +1,28 @@
+@charset "utf-8";
+@import "../../element/btn";
+
+/** btn扩展 **/
+
+//扩展空心
+@include u_btn(
+    $name: hollow,
+    $border-color: map-get($base, disabled-border-color),
+    $bgcolor: map-get($base, doc-bgcolor),
+    $color: map-get($base, color)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

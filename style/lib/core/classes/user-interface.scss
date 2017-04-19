@@ -1,0 +1,40 @@
+
+/**
+ * @module 用户界面
+ * @description 定义使用何种滤镜
+ * @method filter
+ * @param {String} $filter 取值与`filter`属性一致 
+ */
+@mixin filter($filter...) {
+    @include _prefix(filter, $filter);
+}
+
+/**
+ * @module 用户界面
+ * @description 定义UA默认外观
+ * @method appearance
+ * @param {String} $appearance 取值与`appearance`属性一致，默认值：none 
+ */
+@mixin appearance($appearance: none) {
+    @include _prefix(appearance, $appearance);
+}
+
+/**
+ * @module 用户界面
+ * @description 定义如何选中内容
+ * @method user-select
+ * @param {String} $user-select 取值与`user-select`属性一致，默认值：none 
+ */
+@mixin user-select($user-select: none) {
+    @include _prefix(user-select, $user-select);
+}
+
+/**
+ * @module 用户界面
+ * @description 定义盒模型
+ * @method box-sizing
+ * @param {String} $box-sizing 指定盒模型类型，取值与`box-sizing`属性一致，默认值：border-box 
+ */
+@mixin box-sizing($box-sizing: border-box) {
+    @include _prefix(box-sizing, $box-sizing);
+}

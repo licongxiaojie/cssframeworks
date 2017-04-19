@@ -1,0 +1,23 @@
+
+/**
+ * @module 功能
+ * @description 清除行内级元素间间隙方案
+ * @method killspace
+ * @param {Length} $font-size 指定子元素字号，默认值：config基准字号 
+ * @example
+ * <div class="demo">
+ *      <span class="item">1</span>
+ *      <span class="item">2</span>
+ *      <span class="item">3</span>
+ * </div>
+ * .demo {@include killspace;}
+ */
+@mixin killspace($font-size: map-get($base, font-size-baseline)) {
+    font-size: 0;
+    font-family: arial;
+    > .item {
+        display: inline-block;
+        font-size: $font-size;
+        font-family: map-get($base, font-family);
+    }
+}

@@ -1,0 +1,11 @@
+
+/**
+ * @module Animation
+ * @description 定义动画
+ * @method animation
+ * @version 1.0.0
+ * @param {String} $animation 取值与原生语法一致
+ */
+@mixin animation($animation...) {
+    @include _prefix(animation, $animation);
+}

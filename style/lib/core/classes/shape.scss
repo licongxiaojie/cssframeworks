@@ -1,0 +1,36 @@
+
+/**
+ * @module 形状
+ * @description 生成矩形方法
+ * @method rect
+ * @param {Length} $width 定义矩形的长度 
+ * @param {Length} $height 定义矩形的高度 
+ */
+@mixin rect($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+/**
+ * @module 形状
+ * @description 生成正方形方法
+ * @method square
+ * @param {Length} $size 定义正方形的边长
+ */
+@mixin square($size) {
+    width: $size;
+    height: $size;
+}
+
+/**
+ * @module 形状
+ * @description 生成圆形方法
+ * @method circle
+ * @param {Length} $size 定义圆的半径长度 
+ * @param {Length} $radius 定义圆的圆角半径长度 
+ */
+@mixin circle($size, $radius: 50%) {
+    @include square($size);
+    @include border-radius($radius);
+}
+

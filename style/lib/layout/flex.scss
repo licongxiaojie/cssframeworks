@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+// 定义常见弹性布局
+@mixin _flex {
+    height: 100%;
+    &,
+    .flex_inherit {
+        @include flexbox;
+        @include flex-direction(map-get($flex, direction));
+        overflow: hidden;
+    }
+    > .flex,
+    .flex_inherit,
+    .flex_inherit > .flex {
+        @include flex(1, map-get($flex, direction));
+        position: relative;
+    }
+    > .flex,
+    .flex_inherit > .flex {
+        @include overflow;
+        // 用于解决flex无法将动态高度继承给子元素
+        // 这里单独处理flex的子元素为flex的情况，flex通过绝对定位拉伸来得到高度
+        // 请使用 flex-inherit 的方式来进行嵌套（推荐）
+        > .flex {
+            @include fullscreen;
+        }
+    }
+}
+
+/**
+ * @module layout
+ * @method g_flex
+ * @description 构造弹性布局使用方法，可以是横向和纵向
+ * @param {String} $name 定义扩展名称 <1.4.0>
+ * @param {String} $box 指定块级或者行级弹性盒 <1.4.0, 2.0.0>
+ * @param {String} $direction 指定是水平或者垂直布局 <1.4.0>
+ */
+
+@mixin g_flex(
+    $name: default,
+    $direction: default) {
+    // 区别是否新增实例还是修改本身
+    $name: if($name == default, "", "_#{$name}");
+    // 如果值为default，则取config的定义
+    @if $direction == default {
+        $direction: map-get($flex, direction);
+    }
+    .flex#{$name} {
+        &,
+        .flex_inherit {
+            // 如果$direction不等于config预设，则重绘方向
+            @if $direction != map-get($flex, direction) {
+                @include flex-direction($direction);
+            }
+        }
+        > .flex,
+        .flex_inherit,
+        .flex_inherit > .flex {
+            // 如果$direction不等于config预设，则重绘方向
+            @if $direction != map-get($flex, direction) {
+                @include flex(1, $direction);
+            }
+        }
+        // 增量扩展
+        @content;
+    }
+}
+
+// 调用本文件时载入弹性布局基础构造
+.g_flex {
+    @include _flex;
+}

@@ -1,0 +1,54 @@
+@charset "utf-8";
+@import "../../element/badge";
+
+/* badge扩展 */
+
+// 预设常规气泡
+@include badge(
+    $name: normal,
+    $border-color: map-get($base, disabled-color),
+    $bgcolor: map-get($base, disabled-color)
+);
+
+// 预设镂空气泡
+@include badge(
+    $name: hollow,
+    $border-color: map-get($base, disabled-color),
+    $bgcolor: map-get($base, doc-bgcolor),
+    $color:map-get($base, disabled-color)
+);
+
+// 预设ico基础
+@include badge(
+    $name: ident,
+    $bgcolor: map-get($base, doc-bgcolor),
+    $radius: .03rem,
+    $font-size: .1rem,
+    $padding: 0 .02rem
+);
+
+// 预设ico-减
+@include badge(
+    $name: minus,
+    $border-color: map-get($base, disabled-color),
+    $color: map-get($base, disabled-color)
+){
+    @extend .badge_ident;
+}
+// 预设标签气泡
+@include badge(
+    $name: tag,
+    $border-color:map-get($base,link-color),
+    $bgcolor: map-get($base,link-color),
+    $radius: 0,
+    $font-size: .1rem
+);
+// 预设ico-新
+@include badge(
+    $name: new,
+    $border-color: map-get($base,link-color),
+    $color: map-get($base,link-color)
+){
+    @extend .badge_ident;
+}
+
