@@ -1,0 +1,32 @@
+@charset "utf-8";
+@import "../../../elongcss/lib/element/checked";
+
+/**
+ * u_checked扩展
+ */
+
+@include u_checked(
+    $name: a,
+    $border-width: 1px,
+    $border-color: map-get($base, border-color),
+    $on-border-color: map-get($checked, on-color)
+);
+
+@include u_checked(
+    $name: b,
+    $border-width: 1px,
+    $border-color: map-get($base, border-color),
+    $on-border-color: map-get($checked, on-color),
+    $on-bgcolor: map-get($checked, on-color),
+    $on-color: white
+);
+
+@include u_checked(
+    $name: c,
+    $border-width: 1px,
+    $border-color: map-get($base, border-color),
+    $on-border-color: map-get($checked, on-color),
+    $on-bgcolor: map-get($checked, on-color),
+    $on-color: white,
+    $radius: 50%
+);

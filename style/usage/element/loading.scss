@@ -1,0 +1,13 @@
+@charset "utf-8";
+@import "../../../elongcss/lib/element/loading";
+
+/**
+ * loading扩展
+ */
+
+@include u_loading(
+    $name: bg,
+    $bgcolor: #666,
+    $ico-color: map-get($base, light-color),
+    $color:  map-get($base, light-color)
+);

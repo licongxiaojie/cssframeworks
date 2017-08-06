@@ -14,6 +14,13 @@
     $setting: $_setting !global;
 }
 
+// 合并variables和config中的ico map
+@if global-variable-exists(ico) {
+    $ico: map-merge($_ico, $ico) !global;
+} @else {
+    $ico: $_ico !global;
+}
+
 // 合并variables和config中的media-types map
 @if global-variable-exists(media-types) {
     $media-types: map-merge($_media-types, $media-types) !global;
@@ -286,4 +293,10 @@
     $tip: map-merge($_tip, $tip) !global;
 } @else {
     $tip: $_tip !global;
+}
+// 合并variables和config中的input map
+@if global-variable-exists(input) {
+    $input: map-merge($_input, $input) !global;
+} @else {
+    $input: $_input !global;
 }

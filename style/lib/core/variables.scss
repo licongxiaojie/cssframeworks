@@ -16,7 +16,7 @@ $_setting: (
     // {String} 厂商前缀
     vendor-prefix:       -webkit-,
     // {String} 背景图片服务器
-    bgimg-domain:        "",
+    bgimg-domain:        "//m.elongstatic.com/hotel/h5/hotelfx/2017/06/img/",
     // {Boolean} 是否允许横竖屏时文本字号自动调整
     is-text-size-adjust: true
 );
@@ -62,6 +62,15 @@ $_media-types: (
     xl:        "(min-width: 1441px)"
 );
 
+// ico font
+$_ico: (
+    // {Boolean} 是否使用图标字体
+    is-use:     true,
+    // {String} 图标字体文件名
+    font-name:  iconfont,
+    // {Url} 图标字体路径
+    font-path:  "//m.elongstatic.com/hotel/h5/hotelfx/2017/06/iconfont/"
+);
 
 // z-index
 $_z-index: (
@@ -168,9 +177,9 @@ $_btn: (
 // Element checked(11)
 $_checked: (
     // {String} 选中标记的内容，可以是自定义的iconfont编码
-    content:        "\f078",
+    content:        "\e060",
     // {Length} 元件大小
-    size:           .02rem,
+    size:           .2rem,
     // {Length} 标签大小
     font-size:      .12rem,
     // {Length} 边框厚度
@@ -186,7 +195,7 @@ $_checked: (
     // {Color} 激活背景色
     on-bgcolor:     null,
     // {Color} 激活标记颜色
-    on-color:       #2b94ff,
+    on-color:       map-get($base, light-color),
     // {Length} 圆角
     radius:         .05rem
 );
@@ -206,13 +215,13 @@ $_loading: (
     // {Color} 文本颜色
     color:        map-get($base, color),
     // {String} loading的ico编码，自定义的webfont
-    content:      "\f089"
+    content:      "\e062"
 );
 
 // Element loadtip(3)
 $_loadtip: (
     // {Color} 文本色
-    color:     #666,
+    color:     map-get($base, color),
     // {Length} 字号
     font-size: null,
     // {Color} ico色
@@ -227,16 +236,6 @@ $_range: (
     outer-bgcolor: #ccc,
     // {Color} 滑块色
     ball-color:    map-get($base, doc-bgcolor)
-);
-
-// Element score(3)
-$_score: (
-    // {Length} 单项宽度
-    item-width:  1.6rem,
-    // {Length} 单项高度
-    item-height: 1.2rem,
-    // {String} 图片URL
-    url:         "star.png"
 );
 
 // Fragment actionsheet(9)
@@ -284,7 +283,7 @@ $_card: (
     // {Length} 外边框厚度
     border-width: 1px,
     // {Color} 外边框色
-    border-color: #ccc,
+    border-color: #e0e0e0,
     // {Color} 背景色
     bgcolor:      map-get($base, doc-bgcolor),
     // {Color} 文本色
@@ -294,11 +293,11 @@ $_card: (
     // {Length} 头部边框厚度
     hd-border-width: 0 0 1px,
     // {Color} 头部边框色
-    hd-border-color: #ddd,
+    hd-border-color: #e0e0e0,
     // {Length} 底部边框厚度
     ft-border-width: 1px 0 0,
     // {Color} 底部边框色
-    ft-border-color: #ddd
+    ft-border-color: #e0e0e0
 );
 
 // Fragment header(12)
@@ -344,7 +343,7 @@ $_list: (
     // {Length} 列表组头内补白
     label-padding:     .03rem .1rem,
     // {Color} 列表组头背景色
-    label-bgcolor:     map-get($base, doc-bgcolor),
+    label-bgcolor:     map-get($base, bgcolor),
     // {Color} 点击反馈背景色
     active-bgcolor:    #f8f8f8,
     // {Color} 选中背景色
@@ -382,7 +381,7 @@ $_proportion: (
     // {Length} 字号
     font-size:     map-get($base, font-size-baseline),
     // {Color} 当前状态底色
-    inner-bgcolor: red
+    inner-bgcolor: map-get($base, light-color)
 );
 
 // Fragment search(9)
@@ -436,17 +435,17 @@ $_toolbar: (
     // {Length} 宽度
     width:          null,
     // {Length} 高度
-    height:         .44rem,
+    height:         .36rem,
     // {Length} 边框厚度
-    border-width:   .1px,
+    border-width:   1px,
     // {Color} 边框色
-    border-color:   #d36105,
+    border-color:   #ddd,
     // {Color} 背景色
-    bgcolor:        #ff801a,
+    bgcolor:        map-get($base, doc-bgcolor),
     // {Color} 文本色
-    color:          #fff,
+    color:          map-get($base, color),
     // {Color} 选中时背景色
-    on-bgcolor:     #f06d05,
+    on-bgcolor:     #deeaff,
     // {Color} 选中时文本色
     on-color:       null,
     // {Length} 内补白
@@ -476,64 +475,57 @@ $_vcode: (
 // Fragment datepicker(26)
 $_datepicker: (
     // {Length} 星期bar高度
-    week-bar-height:      .22rem,
+    week-bar-height:      .36rem,
     // {Color} 星期bar背景色
-    week-bar-bgcolor:     #1ba9ba,
+    week-bar-bgcolor:     map-get($base, bgcolor),
     // {Color} 星期bar文本色
-    week-bar-color:       #fff,
+    week-bar-color:       map-get($base, color),
     // {Length} 星期bar字号
-    week-bar-font-size:   .12rem,
-
+    week-bar-font-size:   .11rem,
     // {Length} 月份bar高度
-    month-bar-height:     .25rem,
+    month-bar-height:     .45rem,
     // {Color} 月份bar边线色
-    month-bar-border-color:#ddd,
+    month-bar-border-color:#fff,
     // {Color} 月份bar背景色
-    month-bar-bgcolor:     #f9f9f9,
+    month-bar-bgcolor:     #fff,
     // {Color} 月份bar文本色
-    month-bar-color:       #000,
+    month-bar-color:       #353535,
     // {Length} 月份bar字号
     month-bar-font-size:   map-get($base, font-size-baseline),
-
     // {Length} 每行高度
-    week-height:           .54rem,
+    week-height:           .48rem,
     // {Color} 每行边线色
-    week-border-color:      #ddd,
+    week-border-color:      #fff,
     // {Color} 每行文本色
-    week-color:             #000,
-
+    week-color:             #353535,
     // {Length} 每日高度
-    day-height:            .24rem,
-    // {Length} 每日间距
-    day-margin:            .05rem 0 .02rem,
+    day-height:            100%,
+    // {Length} 每日补白
+    day-padding:            .07rem 0,
     // {Length} 每日圆角
     day-radius:            50%,
     // {Length} 每日字号
-    day-font-size:         map-get($base, font-size-baseline),
-
+    day-font-size:         .1rem,
     // {color} 特殊日文本色
-    special-color:         #f50,
+    special-color:         #f00,
     // {color} 周末文本色
     weekend-color:         #f00,
     // {color} 禁用日子文本色
     disabled-color:        map-get($base, disabled-color),
-
     // {color} 选中日期背景色
-    on-bgcolor:            #1ba9ba,
+    on-bgcolor:            map-get($base, light-color),
     // {color} 选中日期文本色
     on-color:              #fff,
     // {color} 选中日期提示语文本色
-    on-tip-color:          #1ba9ba,
+    on-tip-color:          #fff,
     // {Length} 选中日期提示语字号
-    on-tip-font-size:      map-get($base, font-size-baseline),
-
+    on-tip-font-size:      .12rem,
     // {String} 开始日期提示语
-    start-content:         "入店",
+    start-content:         "入住",
     // {String} 结束日期提示语
     end-content:           "离店",
-
     // {color} 选中日期段背景色
-    range-bgcolor:         #eee
+    range-bgcolor:         #deeaff,
 );
 
 // Fragment dialog(8)
@@ -543,11 +535,11 @@ $_dialog: (
     // {Length} 高度
     height:          null,
     // {Length} 圆角
-    radius:          1rem,
+    radius:          .1rem,
     // {Color} 边框色
     border-color:    map-get($base, border-color),
     // {Color} 标题颜色
-    title-color:     map-get($base, color),
+    title-color:     map-get($base, tit-color),
     // {Length} 标题文字大小
     title-font-size: .16rem,
     // {Length} 主体区域间隙
@@ -615,11 +607,12 @@ $_number: (
 // Fragment rating(3)
 $_rating: (
     // {Length} 单项宽度
-    item-width:  .24rem,
+    item-width:  .26rem,
     // {Length} 单项高度
-    item-height: .18rem,
+    item-height: .2rem,
     // {String} 图片URL
     url:         "star.png"
+
 );
 
 // Fragment select(3)
@@ -691,19 +684,19 @@ $_switchable: (
     // {Length} 按钮大小
     btn-size:           .44rem,
     // {Color} 按钮背景色
-    btn-bgcolor:        rgba(#09a5c4, .8),
+    btn-bgcolor:        rgba(#49f, .8),
     // {Color} 按钮文本色
     btn-color:          #fff,
     // {Color} 按钮按下时背景色
-    btn-active-bgcolor: rgba(#09a5c4, .5),
+    btn-active-bgcolor: rgba(#49f, .5),
     // {Color} 按钮按下时文本色
     btn-active-color:   null,
     // {Length} 索引大小
-    index-size:         .1rem,
+    index-size:         .08rem,
     // {Color} 索引背景色
-    index-bgcolor:      #85c8d1,
+    index-bgcolor:      #fff,
     // {Color} 索引的当前项背景色
-    index-on-bgcolor:   #09a5c4
+    index-on-bgcolor:   map-get($base, light-color)
 );
 
 // Fragment tab(15)
@@ -725,7 +718,7 @@ $_tab: (
     // {Color} tab激活背景色
     on-bgcolor:         null,
     // {Color} tab激活文本色
-    on-color:           #49f,
+    on-color:           map-get($base, light-color),
     // {Length} 文本大小
     font-size:          map-get($base, font-size-baseline),
     // {Length} 水平ico大小
@@ -752,4 +745,23 @@ $_tip: (
     color:      #fff,
     // {Length} 箭头大小
     arrow-size: .08rem
+);
+// Element input(8)
+$_input: (
+    // {Length} 输入框宽度
+    width:             100%,
+    // {Length} 输入框高度
+    height:            null,
+    // {Length} 输入框内补白
+    padding:           0  .1rem,
+    // {Length} 输入框圆角
+    radius:            .02rem,
+    // {Color} 输入框边框色
+    border-color:      map-get($base, border-color),
+    // {Color} 输入框背景色
+    bgcolor:           transparent,
+    // {Color} 文本色
+    color:             map-get($base, color),
+    // {Color} 占位符颜色
+    placeholder-color: #bbb
 );

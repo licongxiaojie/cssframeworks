@@ -4,7 +4,7 @@
 @mixin _badge {
     @include align(inline-flex);
     min-width: .14rem;
-    min-height: .14rem;  
+    min-height: .14rem;
     padding: map-get($badge, padding);
     @include border(
         $border-width: map-get($badge, border-width),
@@ -21,15 +21,15 @@
  * @module element
  * @method badge
  * @description 构造提醒气泡的自定义使用方法，可以扩展为：tag,文字ico等形态
- * @param {String} $name 定义扩展名称 
- * @param {Length} $padding 内补白 
- * @param {Length} $border-width 边框厚度 
- * @param {Color} $bordercolor 边框色 
- * @param {Color} $border-color 边框色 
- * @param {Color} $bgcolor 背景色 
- * @param {Color} $color 文本色 
- * @param {Length} $radius 圆角半径长度 
- * @param {Length} $font-size 字号大小 
+ * @param {String} $name 定义扩展名称
+ * @param {Length} $padding 内补白
+ * @param {Length} $border-width 边框厚度
+ * @param {Color} $bordercolor 边框色
+ * @param {Color} $border-color 边框色
+ * @param {Color} $bgcolor 背景色
+ * @param {Color} $color 文本色
+ * @param {Length} $radius 圆角半径长度
+ * @param {Length} $font-size 字号大小
  */
 
 @mixin badge(

@@ -33,7 +33,7 @@
                 margin-right: 0;
             }
         }
-        > .u_ico {
+        > .iconfont {
             display: block;
             &:last-child {
                 color: map-get($list, more-color);
@@ -92,12 +92,13 @@
         }
         &_input {
             // 让输入框占满整个父容器
-            > .input {
+            > .u_ipt {
                 @include appearance;
                 display: block;
                 width: 100%;
                 min-height: .21rem;
                 border: 0;
+                padding:0;
                 &::-webkit-input-placeholder {
                     color: #bbb;
                 }
@@ -134,28 +135,28 @@
  * @module fragment
  * @method m_lst
  * @description 构造列表的自定义使用方法
- * @param {String} $name 定义扩展名称 <1.0.0>
- * @param {Length} $margin 外边距 <1.0.0>
- * @param {Length} $radius 圆角半径长度 <1.0.0>
- * @param {Length} $border-width 外边框厚度 <1.4.0>
- * @param {Color} $bordercolor 边框色 <1.0.0, 2.0.0>
- * @param {Color} $border-color 边框色 <2.0.0>
- * @param {Length} $item-padding 子项的内补白 <1.0.0>
- * @param {Length} $label-padding 列表组头内补白 <1.0.0>
- * @param {Color} $label-bgcolor 列表组头背景色 <1.0.0>
- * @param {Color} $active-bgcolor 子项点击反馈背景色 <1.0.0>
- * @param {Color} $on-bgcolor 子项选中背景色 <1.0.0>
- * @param {Color} $on-color 子项选中文本色 <1.4.0>
- * @param {Boolean} $has-last-border 是否有最后一根底边线，改由`border-width`参数控制 <2.1.0, 2.1.2>
- * @param {Color} $item-bordercolor 子项边框色 <1.2.0, 2.0.0>
- * @param {Color} $item-border-color 子项边框色 <2.0.0>
- * @param {Color} $label-bordercolor 列表组头边框色 <1.2.0, 2.0.0>
- * @param {Color} $label-border-color 列表组头边框色 <2.0.0>
- * @param {Length} $item-font-size 子项字号 <1.2.0>
- * @param {Length} $label-font-size 列表组头字号 <1.2.0>
- * @param {Length} $item-border-space 子项边线左侧偏移量 <1.8.0>
- * @param {Length} $more-font-size 更多区域字号 <2.0.0>
- * @param {Color} $more-color 更多区域文本色 <2.0.0>
+ $name 定义扩展名称
+ $margin 外边距
+ $radius 圆角半径长度
+ $border-width 外边框厚度
+ $bordercolor 边框色
+ $border-color 边框色
+ $item-padding 子项的内补白
+ $label-padding 列表组头内补白
+ $label-bgcolor 列表组头背景色
+ $active-bgcolor 子项点击反馈背景色
+ $on-bgcolor 子项选中背景色
+ $on-color 子项选中文本色
+ $has-last-border 是否有最后一根底边线，改由`border-width`参数控制
+ $item-bordercolor 子项边框色
+ $item-border-color 子项边框色
+ $label-bordercolor 列表组头边框色
+ $label-border-color 列表组头边框色
+ $item-font-size 子项字号
+ $label-font-size 列表组头字号
+ $item-border-space 子项边线左侧偏移量
+ $more-font-size 更多区域字号
+ $more-color 更多区域文本色
  */
 
 @mixin m_lst(
@@ -264,7 +265,7 @@
         > .label,
         > .item,
         .front {
-            > .u_ico {
+            > .iconfont {
                 &:last-child {
                     @if $more-color != map-get($list, more-color) {
                         color: $more-color;

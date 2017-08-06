@@ -56,18 +56,18 @@
  * @module fragment
  * @method m_tb
  * @description 构造表格的自定义使用方法
- * @param {String} $name 定义扩展名称
- * @param {String} $width 宽度
- * @param {Boole} $has-vertical-border 是否需要纵向边框
- * @param {Length} $thead-padding 头部内补白
- * @param {Length} $tbody-padding 主体内补白
- * @param {Color} $bordercolor 边框色  
- * @param {Color} $border-color 边框色 
- * @param {Color} $thead-bgcolor 头部背景色
- * @param {Color} $odd-bgcolor 主体奇数行背景色
- * @param {Color} $even-bgcolor 主体偶数行背景色
- * @param {Color} $active-bgcolor 主体激活背景色
- * @param {Color} $on-bgcolor 主体选中背景色
+ $name 定义扩展名称
+ $width 宽度
+ $has-vertical-border 是否需要纵向边框
+ $thead-padding 头部内补白
+ $tbody-padding 主体内补白
+ $bordercolor 边框色 
+ $border-color 边框色 
+ $thead-bgcolor 头部背景色
+ $odd-bgcolor 主体奇数行背景色
+ $even-bgcolor 主体偶数行背景色
+ $active-bgcolor 主体激活背景色
+ $on-bgcolor 主体选中背景色
  */
 
 @mixin m_tb(

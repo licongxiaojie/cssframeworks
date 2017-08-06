@@ -16,6 +16,7 @@
         padding: .1rem;
         > .tit {
             font-size: .16rem;
+            color: map-get($base, tit-color)
         }
     }
     > .extra {
@@ -49,6 +50,7 @@
             $border-width: map-get($card, hd-border-width),
             $border-color: map-get($card, hd-border-color)
         );
+        color: map-get($base, tit-color)
     }
     > .ft {
         @include border(
@@ -96,18 +98,18 @@
  * @module fragment
  * @method m_cd
  * @description 构造卡片的自定义使用方法
- * @param {String} $name 定义扩展名称
- * @param {Length} $margin 外边距
- * @param {Length} $radius 圆角半径长度
- * @param {Length} $border-width 边框厚度
- * @param {Color} $border-color 边框颜色
- * @param {Color} $bgcolor 背景色
- * @param {Color} $color 文本色
- * @param {Length} $font-size 文本字号
- * @param {Length} $hd-border-width 头部边框厚度
- * @param {Color} $hd-border-color 头部边框色
- * @param {Length} $ft-border-width 底部边框厚度
- * @param {Color} $ft-border-color 底部边框色
+ $name 定义扩展名称
+ $margin 外边距
+ $radius 圆角半径长度
+ $border-width 边框厚度
+ $border-color 边框颜色
+ $bgcolor 背景色
+ $color 文本色
+ $font-size 文本字号
+ $hd-border-width 头部边框厚度
+ $hd-border-color 头部边框色
+ $ft-border-width 底部边框厚度
+ $ft-border-color 底部边框色
  */
 
 @mixin m_cd(

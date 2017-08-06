@@ -2,7 +2,6 @@
 
 // 定义header的基础构造
 @mixin _header {
-    position: relative;
     height: map-get($header, height);
     line-height: map-get($header, height);
     @include border(
@@ -25,7 +24,7 @@
         width: map-get($header, item-width);
         color: map-get($header, item-color);
         cursor: pointer;
-        font-size: map-get($header, item-font-size);
+        font-size: .24rem;
         &:active {
             opacity: .5;
         }
@@ -51,7 +50,7 @@
  * @module fragment
  * @method g_hd
  * @description 构造头的自定义使用方法
- * @param {String} $name 定义扩展名称 
+ * @param {String} $name 定义扩展名称
  * @param {Length} $height 高度 <1.0.0>
  * @param {Length} $item-width 两侧子项操作区宽度
  * @param {Length} $item-space 两侧子项离边界的间隙
@@ -59,11 +58,11 @@
  * @param {Color} $bordercolor 边框色
  * @param {Color} $border-color 边框色
  * @param {Color} $bgcolor 背景色
- * @param {Color} $color 文本色 
- * @param {Length} $font-size 字号大小 
- * @param {Color} $item-color 两侧子项操作区文本色 
+ * @param {Color} $color 文本色
+ * @param {Length} $font-size 字号大小
+ * @param {Color} $item-color 两侧子项操作区文本色
  * @param {Color} $item-ico-color 两侧子项操作区ico色
- * @param {Length} $item-font-size 两侧子项操作区字号大小 
+ * @param {Length} $item-font-size 两侧子项操作区字号大小
  * @param {Length} $item-ico-size 两侧子项操作区ico大小
  */
 

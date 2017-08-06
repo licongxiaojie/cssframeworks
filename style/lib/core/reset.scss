@@ -16,7 +16,7 @@
 }
 
 // 1. 默认关闭页面滚动条
-@include root-scroll;
+//@include root-scroll;
 
 // 1. 隐藏页面滚动条
 ::-webkit-scrollbar {
@@ -25,8 +25,8 @@
 
 // 1. 防止用户自定义网页背景及文字颜色、大小影响
 html {
-    background-color: map-get($base, doc-bgcolor);
     color: map-get($base, color);
+    height: 100%;
     // 定义root字号，作为rem计算基准
     @if map-get($base, responsive-type) == scaling {
         // 如果是跟随屏幕大小而变的场景，使用 vw
@@ -52,6 +52,7 @@ body {
     font-size: map-get($base, font-size);
     line-height: map-get($base, line-height);
     font-family: map-get($base, font-family);
+    background: map-get($base, bgcolor);
 }
 
 // 1. 清除某些元素在不同浏览器下内外补白不同造成的影响
@@ -198,6 +199,7 @@ button,
 select
 a {
     outline: 0 none;
+    border:0;
 }
 
 // 1. 让表单元素具有颜色继承
@@ -257,8 +259,22 @@ a {
 // 1. fix Android Browser 4.2.* 及以下 input:checked ~ .xxx 失效的问题
 html + input {}
 
-// 1. 预设清除浮动
-.g-clear,
-.g-mod {
-    @include clearfix;
-}
+
+// 1. 使用字体图标
+@include _iconfont;
+
+ .bdb {
+    @include border(
+        $border-width: 0 0 1px
+    );
+ }
+ .bdt {
+    @include border(
+        $border-width: 1px 0 0
+    );
+ }
+ .bdl {
+    @include border(
+        $border-width: 0 0 0 1px
+    );
+ }

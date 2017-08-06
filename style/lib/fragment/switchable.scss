@@ -1,0 +1,190 @@
+@charset "utf-8";
+
+// 定义switchable的基础构造
+@mixin _switchable {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    > .bnr_lst {
+        white-space: nowrap;
+        @include killspace;
+        @include flexbox;
+        position: relative;
+        width: 100%;
+        height:auto;
+        background-color: #eee;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transition-property: -webkit-transform;
+        -moz-transition-property: -moz-transform;
+        -o-transition-property: -o-transform;
+        -ms-transition-property: -ms-transform;
+        transition-property: transform;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        > .item {
+              -webkit-transform-style: preserve-3d;
+              -moz-transform-style: preserve-3d;
+              -ms-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+              -webkit-flex-shrink: 0;
+              -ms-flex: 0 0 auto;
+              flex-shrink: 0;
+              width: 100%;
+              height: 100%;
+              position: relative;
+        }
+        .pic {
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+        }
+        .picbg{
+          position: relative;
+          background-size: 100% 100%;
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+    }
+    > .dots {
+        position: absolute;
+        bottom: .05rem;
+        left: 50%;
+        @include transform(translate(-50%, 0));
+        > li {
+            display: inline-block;
+            margin: 0 .03rem;
+            @include square(map-get($switchable, index-size));
+            border-radius: 50%;
+            background-color: map-get($switchable, index-bgcolor);
+            &.on {
+                background-color: map-get($switchable, index-on-bgcolor);
+            }
+        }
+    }
+    > .iconfont {
+        position: absolute;
+        top: 50%;
+        @include transform(translate(0, -50%));
+        @include square(map-get($switchable, btn-size));
+        border-radius: 50%;
+        background-color: map-get($switchable, btn-bgcolor);
+        color: map-get($switchable, btn-color);
+        line-height: map-get($switchable, btn-size);
+        cursor: pointer;
+        &:active {
+            background-color: map-get($switchable, btn-active-bgcolor);
+            color: map-get($switchable, btn-active-color);
+        }
+    }
+    > .ico_prev {
+        left: 0;
+    }
+    > .ico_next {
+        right: 0;
+    }
+}
+
+/**
+ * @module fragment
+ * @method m_swcb
+ * @description 构造switchable的自定义使用方法
+ * $name 定义扩展名称
+ * $has-btn 是否有按钮
+ * $btn-size 按钮大小
+ * $btn-bgcolor 按钮背景色
+ * $btn-color 按钮文本色
+ * $btn-active-bgcolor 按钮按下背景色
+ * $btn-active-color 按钮按下文本色
+ * $index-size 索引大小
+ * $index-bgcolor 索引背景色
+ * $index-on-bgcolor 索引当前项背景色
+ */
+
+@mixin m_swcb(
+    $name: default,
+    $btn-size: default,
+    $btn-bgcolor: default,
+    $btn-color: default,
+    $btn-active-bgcolor: default,
+    $btn-active-color: default,
+    $index-size: default,
+    $index-bgcolor: default,
+    $index-on-bgcolor: default) {
+    // 区别是否新增实例还是修改本身
+    $name: if($name == default, "", "_#{$name}");
+    // 如果值为default，则取config的定义
+    @if $btn-size == default {
+        $btn-size: map-get($switchable, btn-size);
+    }
+    @if $btn-bgcolor == default {
+        $btn-bgcolor: map-get($switchable, btn-bgcolor);
+    }
+    @if $btn-color == default {
+        $btn-color: map-get($switchable, btn-color);
+    }
+    @if $btn-active-bgcolor == default {
+        $btn-active-bgcolor: map-get($switchable, btn-active-bgcolor);
+    }
+    @if $btn-active-color == default {
+        $btn-active-color: map-get($switchable, btn-active-color);
+    }
+    @if $index-size == default {
+        $index-size: map-get($switchable, index-size);
+    }
+    @if $index-bgcolor == default {
+        $index-bgcolor: map-get($switchable, index-bgcolor);
+    }
+    @if $index-on-bgcolor == default {
+        $index-on-bgcolor: map-get($switchable, index-on-bgcolor);
+    }
+    .m_swcb#{$name} {
+        > .dots {
+            > li {
+                @if $index-size != map-get($switchable, index-size) {
+                    @include square($index-size);
+                }
+                @if $index-bgcolor != map-get($switchable, index-bgcolor) {
+                    background-color: $index-bgcolor;
+                }
+                &.on {
+                    @if $index-on-bgcolor != map-get($switchable, index-on-bgcolor) {
+                        background-color: $index-on-bgcolor;
+                    }
+                }
+            }
+        }
+        > .iconfont {
+            @if $btn-size != map-get($switchable, btn-size) {
+                @include square($btn-size);
+                line-height: $btn-size;
+            }
+            @if $btn-bgcolor != map-get($switchable, btn-bgcolor) {
+                background-color: $btn-bgcolor;
+            }
+            @if $btn-color != map-get($switchable, btn-color) {
+                color: $btn-color;
+            }
+            &:active {
+                @if $btn-active-bgcolor != map-get($switchable, btn-active-bgcolor) {
+                background-color: $btn-active-bgcolor;
+                }
+                @if $btn-active-color != map-get($switchable, btn-active-color) {
+                    color: $btn-active-color;
+                }
+            }
+        }
+        // 增量扩展
+        @content;
+    }
+}
+
+// 调用本文件时载入switchable基础构造
+.m_swcb {
+    @include _switchable;
+}

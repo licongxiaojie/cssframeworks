@@ -57,15 +57,15 @@
  * @module fragment
  * @method switch
  * @description 构造switch的自定义使用方法
- * @param $name 定义扩展名称
- * @param $checked-bordercolor 定义switch激活边框色
- * @param $checked-border-color 定义switch激活边框色 
- * @param $checked-bgcolor 定义switch激活背景色 
- * @param $bordercolor 定义switch边框色 
- * @param $border-color 定义switch边框色 
- * @param $bgcolor 定义switch背景色 
- * @param $follow-bgcolor 定义switch跟随背景色 
- * @param $ball-color 定义switch滑块色 
+ $name 定义扩展名称
+ $checked-bordercolor 定义switch激活边框色
+ $checked-border-color 定义switch激活边框色 
+ $checked-bgcolor 定义switch激活背景色 
+ $bordercolor 定义switch边框色 
+ $border-color 定义switch边框色 
+ $bgcolor 定义switch背景色 
+ $follow-bgcolor 定义switch跟随背景色 
+ $ball-color 定义switch滑块色 
  */
 
 @mixin m_swh(

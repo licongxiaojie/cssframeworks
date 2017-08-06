@@ -1,6 +1,10 @@
 @charset "utf-8";
 @import "extra";
-@import "../../core/merge-extra";
+@import "../../../elongcss/lib/core/merge-extra";
 @import "config";
-@import "../../core/merge-config";
-@import "../../core/reset"; 
+@import "../../../elongcss/lib/core/merge-config";
+@import "../../../elongcss/lib/core/reset";
+@import "../../../elongcss/lib/ani/fade-in-up";
+@import "../../../elongcss/lib/ani/fade-in-right";
+@import "../../../elongcss/lib/ani/fade-out-down";
+@import "../../../elongcss/lib/ani/fade-out-right";

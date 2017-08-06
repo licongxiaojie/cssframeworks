@@ -1,0 +1,13 @@
+@charset "utf-8";
+@import "../../../elongcss/lib/element/range";
+
+/**
+ * m_range扩展
+ */
+
+@include m_range(a,#4a87ee);
+@include m_range(b,#43cee6);
+@include m_range(c,#f0b840);
+@include m_range(d,#ef4e3a);
+@include m_range(e,#8a6de9);
+@include m_range(f,#4bd763);

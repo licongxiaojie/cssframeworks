@@ -5,3 +5,15 @@
  * lib中map使用“_”开头，本文件中不使用"_"
  * base ⇌ extra
  */
+ $app:(
+   light-color: #49f,
+   link-color: #49f
+ );
+ @function get($qudao) {
+  @return map-get($channel, $qudao);
+ }
+ $channel: $app;
+ $base: (
+   light-color: get(light-color),
+   link-color: get(link-color),
+ );

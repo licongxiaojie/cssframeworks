@@ -1,0 +1,16 @@
+@charset "utf-8";
+@import "../../../elongcss/lib/fragment/toolbar";
+
+/**
+ * toolbar扩展
+ */
+
+@include m_tlbr(
+    $name: test,
+    $border-color: #ccc,
+    $bgcolor: #eee,
+    $color: #666,
+    $on-bgcolor: #ddd,
+    $on-color: #000,
+    $radius: .05rem
+);

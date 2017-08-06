@@ -1,0 +1,12 @@
+@charset "utf-8";
+@import "../../../elongcss/lib/fragment/rating";
+
+/**
+ * rating扩展
+ */
+
+@include m_rating(
+    $name: test,
+    $item-width: .18rem,
+    $item-height: .18rem
+);

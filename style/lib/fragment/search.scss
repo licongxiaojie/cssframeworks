@@ -10,7 +10,7 @@
     > .operation {
         @include flexbox;
         @include flex;
-        > .u_ico {
+        > .iconfont {
             position: absolute;
             z-index: 2;
             width: .28rem;
@@ -34,7 +34,7 @@
                 }
             }
         }
-        > .u_ico + .u_ipt {
+        > .iconfont + .u_ipt {
             padding-left: .28rem;
         }
     }
@@ -61,16 +61,16 @@
  * @module fragment
  * @method search
  * @description 构造搜索框的自定义使用方法
- * @param {String} $name 定义扩展名称 
- * @param {Length} $padding 搜索框区域内边距
- * @param {Color} $bgcolor 搜索框区域底色
- * @param {Length} $radius 搜索框及搜索按钮圆角
- * @param {Length} $input-height 搜索框高度
- * @param {Color} $input-border-color 搜索框边框色
- * @param {Color} $input-bgcolor 搜索框底色
- * @param {Color} $button-bgcolor 搜索按钮底色
- * @param {Color} $button-color 搜索按钮文本色
- * @param {Color} $cancel-color 取消操作区文本色
+ * $name 定义扩展名称 
+ * $padding 搜索框区域内边距
+ * $bgcolor 搜索框区域底色
+ * $radius 搜索框及搜索按钮圆角
+ * $input-height 搜索框高度
+ * $input-border-color 搜索框边框色
+ * $input-bgcolor 搜索框底色
+ * $button-bgcolor 搜索按钮底色
+ * $button-color 搜索按钮文本色
+ * $cancel-color 取消操作区文本色
  */
 
 @mixin m_sch(

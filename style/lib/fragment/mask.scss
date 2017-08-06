@@ -2,12 +2,12 @@
 
 // 定义mask的基础构造
 @mixin _mask {
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
     z-index: map-get($z-index, mask);
+    height: 100%;
+    width:100%;
     background-color: map-get($mask, bgcolor);
 }
 
@@ -15,7 +15,7 @@
  * @module widget
  * @method m_mask
  * @description 构造m_mask的自定义使用方法
- * @param {String} $name 定义扩展名称 
+ * @param {String} $name 定义扩展名称
  * @param {Color} $bgcolor 背景色
  */
 
